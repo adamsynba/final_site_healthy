@@ -1,0 +1,52 @@
+/* Consistent navigation, account pages and accessible states. */
+.skip-link { position: absolute; top: -100px; left: 12px; z-index: 100; padding: 10px 16px; color: #111; background: #fff; }
+.skip-link:focus { top: 8px; }
+.site-header { gap: 20px; }
+.main-nav { gap: clamp(10px, 1.4vw, 20px); }
+.main-nav a { white-space: nowrap; }
+.header-actions { margin-left: auto; }
+.menu-toggle { display: none; border: 1px solid var(--border); border-radius: 999px; padding: 8px 15px; background: transparent; color: var(--text); font-weight: 700; cursor: pointer; }
+.theme-btn { white-space: nowrap; }
+.account-link { margin: 20px 0 0; color: var(--muted); }
+.account-link a, .inline-link, .alert a { text-decoration: underline; font-weight: 700; color: #5236df; }
+.form-error { color: #bf2626; font-weight: 700; margin: 15px 0 0; }
+.form-error:empty { display: none; }
+.profile-list { margin: 22px 0 28px; }
+.profile-list > div { display: grid; grid-template-columns: 160px 1fr; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--border); }
+.profile-list dt { font-weight: 700; }
+.profile-list dd { margin: 0; overflow-wrap: anywhere; }
+.location-count { color: var(--muted); margin-bottom: 24px; }
+.dark-theme .account-link a, .dark-theme .inline-link { color: #c6baff; }
+.dark-theme .form-error, .dark-theme .no-results, .dark-theme .fav-error { color: #ff9d9d; }
+.dark-theme .form-text, .dark-theme .text-body-secondary { color: #bfc7dc !important; }
+.dark-theme .btn-outline-dark { border-color: #d0d6e7; color: #eef1fa; }
+.dark-theme .btn-outline-dark:hover { background: #eef1fa; color: #121624; }
+.dark-theme .price-card, .dark-theme .price-card h3, .dark-theme .price-card strong, .dark-theme .price-card p, .dark-theme .price-card li { color: white; }
+.dark-theme #clearFilters { background: #1a1f33; color: #f1eeff; border-color: #a99cff; }
+.dark-theme .faq-question::after { color: #b4a6ff; }
+.dark-theme .welcome-message { color: #c6baff; }
+.dark-theme .main-nav a:hover, .dark-theme .main-nav a:focus, .dark-theme .main-nav .active { color: #c4b8ff; border-bottom-color: #c4b8ff; }
+.dark-theme .filter.active-filter { background: #6c4cff; color: #fff; }
+.dark-theme .filter:hover { border-color: #a99cff; }
+.dark-theme .theme-btn:hover { color: #d1c8ff; border-color: #d1c8ff; }
+@media (max-width: 900px) {
+  .site-header { gap: 10px; }
+  .site-header.nav-ready .menu-toggle { display: inline-flex; margin-left: auto; }
+  .site-header.nav-ready .header-actions { margin-left: 0; }
+  .site-header.nav-ready .main-nav { display: none; order: 4; flex: 0 0 100%; overflow: visible; white-space: normal; }
+  .site-header.nav-ready.menu-open .main-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px 16px; padding: 8px 2px; }
+  .main-nav a { white-space: normal; }
+}
+@media (max-width: 600px) {
+  .profile-list > div { grid-template-columns: 1fr; gap: 2px; }
+  .site-header.nav-ready .main-nav a { font-size: 14px; }
+  .theme-btn { font-size: 12px; }
+  .hero-visual { overflow: hidden; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+.dark-theme .filter { color: #eef1fa; }
+.dark-theme .catalog-card > a, .dark-theme .step > span, .dark-theme .benefit-grid article > span { color: #c6baff; }
+.dark-theme .invalid-feedback { color: #ffaaaa; }
+.dark-theme .valid-feedback { color: #9ee8b5; }
